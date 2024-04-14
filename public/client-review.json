@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "profession": "Real Estate Investor",
+    "review_description": "I've been using this real estate platform for years, and it's been instrumental in helping me find lucrative investment opportunities. The user interface is intuitive, and the support team is always responsive to any queries I have.",
+    "image": "https://source.unsplash.com/50x50/?portrait?1"
+  },
+  {
+    "id": 2,
+    "name": "Alice Smith",
+    "profession": "First-Time Home Buyer",
+    "review_description": "As a first-time home buyer, I was initially overwhelmed by the process. However, this platform made it incredibly easy for me to search for properties within my budget and preferences. I found my dream home within weeks, thanks to their comprehensive listings and helpful resources.",
+    "image": "https://source.unsplash.com/50x50/?portrait?2"
+  },
+  {
+    "id": 3,
+    "name": "David Johnson",
+    "profession": "Real Estate Agent",
+    "review_description": "As a real estate agent, I rely on this platform to showcase my listings to potential buyers. The exposure my properties receive on this platform is unmatched, and the tools provided make it easy for me to manage my listings and communicate with clients.",
+    "image": "https://source.unsplash.com/50x50/?portrait?3"
+  },
+  {
+    "id": 4,
+    "name": "Emily Brown",
+    "profession": "Property Manager",
+    "review_description": "Managing multiple properties can be challenging, but this platform streamlines the process for me. From tenant screening to lease management, everything is organized and efficient. It's an invaluable tool for any property manager.",
+    "image": "https://source.unsplash.com/50x50/?portrait?4"
+  }
+]
