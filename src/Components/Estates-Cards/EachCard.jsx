@@ -1,3 +1,4 @@
+import "animate.css";
 const EachCard = ({ eachCardData }) => {
   const { estate_title, image, location } = eachCardData;
   return (
