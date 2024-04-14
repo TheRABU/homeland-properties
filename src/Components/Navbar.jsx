@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import houseLogo from "../assets/houseLogo.png";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const navLinks = (
     <>
       <li>
@@ -23,6 +26,10 @@ const Navbar = () => {
       </li>
     </>
   );
+  // signout
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
   return (
     <div className="navbar bg-base-100 px-3 md:px-10">
       <div className="navbar-start">
@@ -72,16 +79,22 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <Link
-          to="/login"
-          className="px-5 py-2.5 relative rounded group text-white font-medium inline-block"
-        >
-          <span className="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
-          <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-purple-600 to-blue-500"></span>
-          <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span>
-          <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-purple-600 from-blue-500"></span>
-          <span className="relative">Login</span>
-        </Link>
+        {user ? (
+          <button onClick={handleSignOut} className="btn btn-secondary">
+            Sign Out
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            className="px-5 py-2.5 relative rounded group text-white font-medium inline-block"
+          >
+            <span className="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-purple-600 to-blue-500"></span>
+            <span className="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-purple-600 to-blue-500"></span>
+            <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-purple-600 to-blue-500"></span>
+            <span className="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-purple-600 from-blue-500"></span>
+            <span className="relative">Login</span>
+          </Link>
+        )}
       </div>
     </div>
   );
