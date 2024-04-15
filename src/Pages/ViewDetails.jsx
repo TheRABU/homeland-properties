@@ -1,15 +1,23 @@
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const ViewDetails = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const { id } = useParams();
-  const details = useLoaderData();
+  const detail = useLoaderData();
 
-  // Find the detail with the matching id
-  const detail = details.find((detail) => detail.id === parseInt(id));
+  useEffect(() => {
+    for (let i = 0; i < detail.length; ++i) {
+      const p = detail[i];
+      if (p.id === parseInt(id, 10)) {
+        setSelectedProduct(p);
+        break;
+      }
+    }
+  }, [detail, id]);
 
-  // If detail is not found, render a message
-  if (!detail) {
+  if (!selectedProduct) {
     return (
       <div>
         <Helmet>
@@ -23,13 +31,18 @@ const ViewDetails = () => {
   return (
     <div>
       <Helmet>
-        <title>View Details</title>
+        <title>View Details </title>
       </Helmet>
       <h2 className="text-center text-3xl">View Details of {id}</h2>
+
       <div>
-        <p>Estate Title: {detail.estate_title}</p>
-        <p>Description: {detail.description}</p>
-        <p>Price: {detail.price}</p>
+        <p>Estate Title: {selectedProduct.estate_title}</p>
+        <p>Description: {selectedProduct.description}</p>
+        <p>Price: {selectedProduct.price}</p>
+        <p>Status: {selectedProduct.status}</p>
+        <p>Area: {selectedProduct.area}</p>
+        <p>Location: {selectedProduct.location}</p>
+        <p>Facilities: {selectedProduct.facilities?.join(", ")}</p>
       </div>
     </div>
   );

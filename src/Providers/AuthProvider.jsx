@@ -4,6 +4,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/firebase.init";
@@ -27,10 +28,19 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+  // update profile
+  // updateProfile(auth.currentUser, {
+  //   displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg"
+  // }).then(() => {
+  //   // Profile updated!
+  //   // ...
+  // }).catch((error) => {
+  //   // An error occurred
+  //   // ...
+  // });
   //update user onAuthStateChanged from firebase
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("user on auth state changed", currentUser);
       setUser(currentUser);
       setLoading(false);
     });

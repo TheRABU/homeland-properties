@@ -18,7 +18,7 @@ const EachCard = ({ eachCardData }) => {
       </a>
       <div className="flex flex-col flex-1 p-6">
         <Link
-          to={`/details/:${id}`}
+          to={`/details/${id}`}
           rel="noopener noreferrer"
           href="#"
           className="text-xs tracking-wider uppercase hover:underline dark:text-blue-600"

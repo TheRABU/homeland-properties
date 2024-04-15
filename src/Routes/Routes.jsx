@@ -8,6 +8,7 @@ import BookAppointment from "../Pages/BookAppointment";
 import AboutUs from "../Pages/AboutUs";
 import ViewDetails from "../Pages/ViewDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        loader: (params) => fetch(`/estate-data/${params.id}.json`),
+        loader: () => fetch(`/estate-data.json`),
         element: (
           <PrivateRoutes>
             <ViewDetails />
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
       },
     ],
   },
