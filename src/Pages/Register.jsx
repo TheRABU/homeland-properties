@@ -1,40 +1,41 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, handleUpdateProfile } = useContext(AuthContext);
   const [registerError, setRegisterError] = useState("");
   const [registerSuccess, setRegisterSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const terms = e.target.terms.value;
 
+    // // reset error message state ui
+    setRegisterError("");
+    setRegisterSuccess("");
+    if (password.length < 6) {
+      setRegisterError("Password should be at least 6 characters of longer");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setRegisterError(
+        "Your password should have at least one Uppercase character!"
+      );
+      return;
+    } else if (!terms) {
+      setRegisterError("Please accept our terms and conditions to register");
+      return;
+    }
     // create user
     createUser(email, password)
-      .then((result) => console.log(result.user))
+      .then(navigate(location?.state ? location.state : "/"))
       .catch((error) => console.log(error));
-    // // reset error message state ui
-    // setRegisterError("");
-    // setRegisterSuccess("");
-    // //password validation
-    // if (password.length < 6) {
-    //   setRegisterError("Password should be at least 6 characters of longer");
-    //   return;
-    // } else if (!/[A-Z]/.test(password)) {
-    //   setRegisterError(
-    //     "Your password should have at least one Uppercase character!"
-    //   );
-    //   return;
-    // } else if (!termsConditions) {
-    //   setRegisterError("Please accept our terms and conditions to register");
-    //   return;
-    // }
   };
   return (
     <>

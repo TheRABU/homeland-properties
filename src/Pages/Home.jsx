@@ -18,9 +18,6 @@ const Home = () => {
         <Helmet>
           <title>Home</title>
         </Helmet>
-        <h2 className="text-3xl text-center animate__slideInDown">
-          Welcome to Homepage
-        </h2>
         <Banner />
         <div data-aos="zoom-in-up" className="mt-10">
           <HeroContent />

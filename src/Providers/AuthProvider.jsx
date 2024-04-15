@@ -14,6 +14,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
   // create user
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -29,16 +30,21 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
   // update profile
-  // updateProfile(auth.currentUser, {
-  //   displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg"
-  // }).then(() => {
-  //   // Profile updated!
-  //   // ...
-  // }).catch((error) => {
-  //   // An error occurred
-  //   // ...
-  // });
-  //update user onAuthStateChanged from firebase
+  const handleUpdateProfile = () => {
+    //Update profile and get user's name,image and data
+
+    return updateProfile(user, {
+      displayName: name,
+      photoURL: "https://example.com/jane-q-user/profile.jpg",
+    })
+      .then(() => {
+        console.log("profile updated");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -54,6 +60,7 @@ const AuthProvider = ({ children }) => {
     createUser,
     signIn,
     logOut,
+    handleUpdateProfile,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
