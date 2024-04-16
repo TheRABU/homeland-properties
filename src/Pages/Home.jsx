@@ -22,7 +22,7 @@ const Home = () => {
         <div data-aos="zoom-in-up" className="mt-10">
           <HeroContent />
         </div>
-        <div data-aos="fade-left">
+        <div data-aos="fade-down">
           <EstateSection />
         </div>
         <div data-aos="fade-up">
