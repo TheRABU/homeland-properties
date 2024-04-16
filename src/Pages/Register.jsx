@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 const Register = () => {
-  const { createUser, handleUpdateProfile } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
   const [registerError, setRegisterError] = useState("");
   const [registerSuccess, setRegisterSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);

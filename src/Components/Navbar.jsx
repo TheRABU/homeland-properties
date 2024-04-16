@@ -31,7 +31,7 @@ const Navbar = () => {
     logOut().then().catch();
   };
   return (
-    <div className="navbar bg-base-100 px-3 md:px-10">
+    <div className="navbar bg-base-100 px-3 py-10 md:px-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -67,18 +67,45 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <div
+        {user ? (
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar tooltip"
+            data-tip={user.displayName}
+          >
+            <div className="w-10 rounded-full">
+              <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+            </div>
+          </div>
+        ) : (
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar tooltip"
+            data-tip="please login"
+          >
+            <div className="w-10 rounded-full">
+              <img
+                alt="Tailwind CSS Navbar component"
+                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              />
+            </div>
+          </div>
+        )}
+        {/* <div
           tabIndex={0}
           role="button"
           className="btn btn-ghost btn-circle avatar"
         >
+          
           <div className="w-10 rounded-full">
             <img
               alt="Tailwind CSS Navbar component"
               src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
             />
           </div>
-        </div>
+        </div> */}
         {user ? (
           <button onClick={handleSignOut} className="btn btn-secondary">
             Sign Out
