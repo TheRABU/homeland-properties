@@ -39,11 +39,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/career",
-        element: <Career />,
+        element: (
+          <PrivateRoutes>
+            <Career />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/book-appointment",
-        element: <BookAppointment />,
+        element: (
+          <PrivateRoutes>
+            <BookAppointment />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/about",
