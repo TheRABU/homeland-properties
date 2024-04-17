@@ -93,6 +93,11 @@ const Navbar = () => {
             </div>
           </div>
         )}
+        {user && (
+          <button className="btn btn-link">
+            <Link to="/update-profile">Update Profile</Link>{" "}
+          </button>
+        )}
         {/* <div
           tabIndex={0}
           role="button"

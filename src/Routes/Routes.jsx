@@ -9,6 +9,7 @@ import AboutUs from "../Pages/AboutUs";
 import ViewDetails from "../Pages/ViewDetails";
 import PrivateRoutes from "./PrivateRoutes";
 import ErrorPage from "../Pages/ErrorPage";
+import ProfilePage from "../Pages/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,14 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs />,
+      },
+      {
+        path: "/update-profile",
+        element: (
+          <PrivateRoutes>
+            <ProfilePage />,
+          </PrivateRoutes>
+        ),
       },
       {
         path: "*",

@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 const Login = () => {
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   // handle login function
@@ -29,6 +31,15 @@ const Login = () => {
         console.error(error);
       });
   };
+  const handleGithubSignIn = () => {
+    signInWithGithub()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <>
       <Helmet>
@@ -39,9 +50,9 @@ const Login = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
             <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              Please Login with your account here. You can select multiple login
+              methods. Such as Login with Email, Login with Goole and Login with
+              Github.
             </p>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -78,10 +89,19 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
+              <p className="ml-5">
+                New here?{" "}
+                <Link className="underline text-blue-600" to="/register">
+                  Register Now
+                </Link>{" "}
+              </p>
             </form>
-            <div>
+            <div className="flex items-center mx-auto gap-x-7 my-5">
               <button onClick={handleGoogleSignIn}>
                 <FcGoogle className="text-4xl" />
+              </button>
+              <button onClick={handleGithubSignIn}>
+                <FaGithub className="text-4xl" />
               </button>
             </div>
           </div>

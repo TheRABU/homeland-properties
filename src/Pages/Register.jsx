@@ -3,10 +3,11 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-  const [registerError, setRegisterError] = useState("");
-  const [registerSuccess, setRegisterSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -17,24 +18,41 @@ const Register = () => {
     const password = e.target.password.value;
     const terms = e.target.terms.value;
 
-    // // reset error message state ui
-    setRegisterError("");
-    setRegisterSuccess("");
+    // password validation
+
     if (password.length < 6) {
-      setRegisterError("Password should be at least 6 characters of longer");
+      toast.error("Password should be at least 6 characters long");
       return;
     } else if (!/[A-Z]/.test(password)) {
-      setRegisterError(
-        "Your password should have at least one Uppercase character!"
+      toast.error(
+        "Your password should have at least one uppercase character!"
+      );
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      toast.error(
+        "Your password should have at least one lowercase character!"
       );
       return;
     } else if (!terms) {
-      setRegisterError("Please accept our terms and conditions to register");
+      toast.error("Please accept our terms and conditions to register");
       return;
     }
     // create user
     createUser(email, password)
-      .then(navigate(location?.state ? location.state : "/"))
+      .then(() => {
+        toast.success("🦄 Registration successful!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: "Bounce",
+        });
+        navigate(location?.state ? location.state : "/");
+      })
       .catch((error) => console.log(error));
   };
   return (
@@ -47,11 +65,11 @@ const Register = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Register Here</h1>
             <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              New to homeland properties ? Create an account now and become a
+              part of this amazing community right now!!
             </p>
           </div>
+
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
@@ -114,7 +132,29 @@ const Register = () => {
                 <div className="flex items-center">
                   <input type="checkbox" name="terms" id="terms" />
                   <label className="ml-2" htmlFor="terms">
-                    Accept our terms and conditions
+                    {/* Open the modal using document.getElementById('ID').showModal() method */}
+                    <button
+                      className="btn btn-link"
+                      onClick={() =>
+                        document.getElementById("my_modal_1").showModal()
+                      }
+                    >
+                      Accept our terms and conditions
+                    </button>
+                    <dialog id="my_modal_1" className="modal">
+                      <div className="modal-box">
+                        <h3 className="font-bold text-lg">Hello!</h3>
+                        <p className="py-4">
+                          Press ESC key or click the button below to close
+                        </p>
+                        <div className="modal-action">
+                          <form method="dialog">
+                            {/* if there is a button in form, it will close the modal */}
+                            <button className="btn">Close</button>
+                          </form>
+                        </div>
+                      </div>
+                    </dialog>
                   </label>
                 </div>
               </div>
@@ -124,17 +164,29 @@ const Register = () => {
                 </button>
               </div>
             </form>
-            <div>
-              <span>
-                Already have an account?
-                <Link className="underline" to="/login">
-                  Login
-                </Link>
-              </span>
-            </div>
+
+            <p className="ml-5">
+              Already have an account?
+              <Link className="underline text-blue-600" to="/login">
+                Login
+              </Link>
+            </p>
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition="Bounce"
+      />
     </>
   );
 };
