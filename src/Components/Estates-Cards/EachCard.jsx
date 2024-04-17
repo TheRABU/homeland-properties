@@ -13,7 +13,7 @@ const EachCard = ({ eachCardData }) => {
         <img
           alt=""
           className="object-cover w-full h-52 dark:bg-gray-500"
-          src="https://source.unsplash.com/200x200/?fashion?1"
+          src={image}
         />
       </a>
       <div className="flex flex-col flex-1 p-6">

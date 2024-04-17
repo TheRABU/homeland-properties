@@ -9,7 +9,7 @@
     "area": "3500 sqft",
     "location": "Miami, Florida",
     "facilities": ["living room", "swimming pool", "kitchen", "ocean view"],
-    "image": "villa1.jpg",
+    "image": "https://i.ibb.co/TYfjF8v/estate1.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -22,7 +22,7 @@
     "area": "1800 sqft",
     "location": "New York City, New York",
     "facilities": ["living room", "kitchen", "backyard"],
-    "image": "townhouse1.jpg",
+    "image": "https://i.ibb.co/swc1Svk/estate2.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -35,7 +35,7 @@
     "area": "1200 sqft",
     "location": "San Francisco, California",
     "facilities": ["living room", "kitchen", "gym", "rooftop terrace"],
-    "image": "apartment1.jpg",
+    "image": "https://i.ibb.co/gt7hWtp/estate3.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -48,7 +48,7 @@
     "area": "2500 sqft",
     "location": "Chicago, Illinois",
     "facilities": ["living room", "kitchen", "backyard", "garage"],
-    "image": "suburbanhome1.jpg",
+    "image": "https://i.ibb.co/DKWDwJ6/estate4.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -61,7 +61,7 @@
     "area": "1500 sqft",
     "location": "Seattle, Washington",
     "facilities": ["living room", "kitchen", "fireplace", "dock"],
-    "image": "cabin1.jpg",
+    "image": "https://i.ibb.co/vhq1Z2h/estate5.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -74,7 +74,7 @@
     "area": "4000 sqft",
     "location": "Los Angeles, California",
     "facilities": ["living room", "kitchen", "balcony", "concierge service"],
-    "image": "penthouse1.jpg",
+    "image": "https://i.ibb.co/JmsKYPH/estate6.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -87,7 +87,7 @@
     "area": "2800 sqft",
     "location": "Brooklyn, New York",
     "facilities": ["living room", "kitchen", "garden", "fireplace"],
-    "image": "brownstone1.jpg",
+    "image": "https://i.ibb.co/N2jhJw4/estate7.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -100,7 +100,7 @@
     "area": "2000 sqft",
     "location": "Miami Beach, Florida",
     "facilities": ["living room", "kitchen", "balcony", "pool"],
-    "image": "condo1.jpg",
+    "image": "https://i.ibb.co/yyMpKfz/estate8.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -113,7 +113,7 @@
     "area": "2200 sqft",
     "location": "Aspen, Colorado",
     "facilities": ["living room", "kitchen", "fireplace", "ski storage"],
-    "image": "mountainretreat1.jpg",
+    "image": "https://i.ibb.co/Jd7w1yL/estate9.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -126,7 +126,7 @@
     "area": "1800 sqft",
     "location": "Austin, Texas",
     "facilities": ["living room", "kitchen", "exposed brick", "rooftop deck"],
-    "image": "loft1.jpg",
+    "image": "https://i.ibb.co/jTw4MT7/estate10.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -139,7 +139,7 @@
     "area": "6000 sqft",
     "location": "Charleston, South Carolina",
     "facilities": ["living room", "kitchen", "pool", "dock"],
-    "image": "waterfrontestate1.jpg",
+    "image": "https://i.ibb.co/W29Vzhf/estate11.jpg",
     "view_property_button": "View Property"
   },
   {
@@ -152,25 +152,7 @@
     "area": "1800 sqft",
     "location": "Nashville, Tennessee",
     "facilities": ["living room", "kitchen", "wrap-around porch", "barn"],
-    "image": "farmhouse1.jpg",
-    "view_property_button": "View Property"
-  },
-  {
-    "id": 13,
-    "estate_title": "Contemporary Studio Apartment",
-    "segment_name": "Residential",
-    "description": "Modern studio apartment in a lively urban neighborhood. Ideal for young professionals.",
-    "price": "$1,500/month",
-    "status": "rent",
-    "area": "600 sqft",
-    "location": "Boston, Massachusetts",
-    "facilities": [
-      "living room",
-      "kitchen",
-      "fitness center",
-      "rooftop lounge"
-    ],
-    "image": "studioapartment1.jpg",
+    "image": "https://i.ibb.co/fpD5HhP/estate12.jpg",
     "view_property_button": "View Property"
   }
 ]

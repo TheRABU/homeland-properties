@@ -55,8 +55,11 @@ const AboutUsComponent = () => {
             <div className="ml-3">
               <dt className="text-lg font-medium">Quisque eu dui lacinia</dt>
               <dd className="mt-2 dark:text-gray-600">
-                Quisque ultricies volutpat sapien nec varius. Sed sit amet justo
-                vestibulum, efficitur risus quis, gravida libero.
+                Our team is comprised of experienced professionals who are
+                passionate about real estate and committed to helping you
+                achieve your goals. We understand that every client is unique,
+                and we tailor our approach to meet your specific needs and
+                preferences.
               </dd>
             </div>
           </div>

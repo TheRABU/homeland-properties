@@ -6,37 +6,30 @@ const Questions = () => {
           Frequently Asked Questions
         </h2>
         <p className="mt-4 mb-8 dark:text-gray-600">
-          Sagittis tempor donec id vestibulum viverra. Neque condimentum primis
-          orci at lacus amet bibendum.
+          See if we have already answered your questions.
         </p>
         <div className="space-y-4">
           <details className="w-full border rounded-lg">
             <summary className="px-4 py-6 focus:outline-none focus-visible:dark:ring-violet-600">
-              Ex orci laoreet egestas sapien magna egestas scelerisque?
+              Do we provide police support for any unwanted situation?
             </summary>
             <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-600">
-              Lectus iaculis orci metus vitae ligula dictum per. Nisl per nullam
-              taciti at adipiscing est.{" "}
+              No. we don't but we do can manage lawyers for you.
             </p>
           </details>
           <details className="w-full border rounded-lg">
             <summary className="px-4 py-6 focus:outline-none focus-visible:dark:ring-violet-600">
-              Lorem at arcu rutrum viverra metus sapien venenatis lobortis odio?
+              Do we take any international currency other than US$ Dollars?
             </summary>
-            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-600">
-              Tincidunt ut hac condimentum rhoncus phasellus nostra. Magna
-              porttitor egestas tincidunt neque vehicula potenti.{" "}
-            </p>
+            <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-600">No.</p>
           </details>
           <details className="w-full border rounded-lg">
             <summary className="px-4 py-6 focus:outline-none focus-visible:dark:ring-violet-600">
-              Eleifend feugiat sollicitudin laoreet adipiscing bibendum suscipit
-              erat?
+              Do we refund your money if you don't find our services well enough
+              for you?
             </summary>
             <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-600">
-              Justo libero tellus integer tincidunt justo semper consequat
-              venenatis aliquet imperdiet. Ultricies urna proin fusce nulla
-              pretium sodales vel magna et massa euismod vulputate sed.{" "}
+              Yes with given proper description.
             </p>
           </details>
         </div>
